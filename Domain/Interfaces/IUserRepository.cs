@@ -12,5 +12,11 @@ namespace Domain.Interfaces
         User? Get(string name);
         List<User> GetAll();
 
+        public int Add(User user);
+        public int Update(User user);
+        public int Delete(User user);
+
+
+
     }
 }

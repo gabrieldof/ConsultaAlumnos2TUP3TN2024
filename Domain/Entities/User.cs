@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class User
+    public abstract class User
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -17,6 +17,8 @@ namespace Domain.Entities
         public string Email { get; set; }
         public string Password { get; set; }
 
+        [Column(TypeName = "nvarchar(100)")]
+        public string UserType { get; set; }
 
     }
 }
