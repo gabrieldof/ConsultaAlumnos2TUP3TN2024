@@ -28,8 +28,8 @@ namespace Infrastructure
             modelBuilder.Entity<User>().HasDiscriminator(u => u.UserType);
 
             modelBuilder.Entity<Subject>()
-    .Property(b => b.Id)
-    .ValueGeneratedOnAdd();
+                        .Property(b => b.Id)
+                        .ValueGeneratedOnAdd();
 
             modelBuilder.Entity<Student>().HasData(CreateStudentDataSeed());
 
@@ -38,12 +38,12 @@ namespace Infrastructure
             modelBuilder.Entity<Subject>().HasData(CreateSubjectDataSeed());
 
             modelBuilder.Entity<Subject>()
-      .HasMany(x => x.Professors)
-      .WithMany(x => x.Subjects)
-      .UsingEntity(j => j
-          .ToTable("ProfessorSubject")
-          .HasData(CreateProfessorSubjectDataSeed()
-          ));
+                          .HasMany(x => x.Professors)
+                          .WithMany(x => x.Subjects)
+                          .UsingEntity(j => j
+                              .ToTable("ProfessorSubject")
+                              .HasData(CreateProfessorSubjectDataSeed()
+                              ));
 
             /* modelBuilder.Entity<Professor>()
                  .HasMany(s => s.Subjects)

@@ -50,5 +50,10 @@ namespace Infrastructure.Repositories
 
         }
 
+        public User? GetUserByName (string userName)
+        {
+            return _context.Users.FirstOrDefault(p => p.Name == userName);
+        }
+
     }
 }
